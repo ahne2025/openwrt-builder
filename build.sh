@@ -4,10 +4,7 @@ start_time=$(date +"%Y%m%d%H%M")
 
 CWD=`pwd`
 
-if [ ! -f ".buildopenwrt" ]; then
-    echo "not a openwrt builder folder"
-    exit 1
-fi
+
 
 repo_url=`sed '/^url=/!d;s/.*=//' ${CWD}/config/repo`
 repo_url=${repo_url-:"https://github.com/openwrt/openwrt"}
